@@ -1,6 +1,7 @@
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     mySprite.startEffect(effects.spray, 200)
     info.changeScoreBy(1)
+    music.magicWand.play()
 })
 let projectile: Sprite = null
 let mySprite: Sprite = null
@@ -53,4 +54,7 @@ game.onUpdateInterval(1000, function () {
         . . . . . . . . . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . . . . . . . . . 
         `, randint(-50, 50), randint(-50, 50))
+})
+forever(function () {
+    music.playMelody("- - - - - - - - ", 120)
 })
